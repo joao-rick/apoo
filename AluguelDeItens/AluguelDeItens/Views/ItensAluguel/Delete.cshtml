@@ -1,0 +1,10 @@
+﻿@model ItemAluguel
+
+<h2>Confirmar Exclusão</h2>
+
+<p>Tem certeza de que deseja excluir o item: <strong>@Model.Nome</strong>?</p>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Sim, Excluir</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

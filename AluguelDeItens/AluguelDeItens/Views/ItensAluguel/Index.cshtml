@@ -1,0 +1,27 @@
+﻿@model List<ItemAluguel>
+
+<h2>Lista de Itens para Aluguel</h2>
+
+<p>
+    @Html.ActionLink("Novo Item", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Preco.ToString("C")</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
